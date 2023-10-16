@@ -103,15 +103,15 @@ That's why GraphQL includes reusable units called _fragments_. Fragments let you
 # { "graphiql": true }
 {
   leftComparison: hero(episode: EMPIRE) {
-    ...comparisonFields
+    ...CharacterView
   }
   rightComparison: hero(episode: JEDI) {
-    ...comparisonFields
+    ...CharacterView
   }
 }
 
 # used by the character-rendering UI component
-fragment comparisonFields on Character {
+fragment CharacterView on Character {
   name
   appearsIn
   friends {
